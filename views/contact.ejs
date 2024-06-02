@@ -1,0 +1,33 @@
+<style>
+    body
+    {background-color:#F1FADA;}
+    form
+    {text-align: center;
+      align-content: center;
+      background-color: #9AD0C2;
+      padding: 20px;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;}
+    input,textarea
+    {
+      width: 50%;
+      margin-left: 25%;
+      background-color: #F1FADA;
+    }
+    h1
+    {text-align: center;
+    color: #F1FADA;
+    background-color: #2D9596;
+    margin: 0;}
+</style>
+<%- include('partials/header.ejs') %>
+<h1>Contact Me</h1>
+
+<form>
+  <input name="name" placeholder="Name" />
+  <input name="email" type="text"  placeholder="Email" />
+  <textarea name="text" placeholder="Comment"></textarea>
+  <input type="submit" value="SUBMIT" />
+</form>
+<%-include("partials/footer.ejs")%>
