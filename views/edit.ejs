@@ -1,0 +1,81 @@
+<style>
+    body
+    {background-color: #F1FADA;}
+    h1 {
+        text-align: center;
+        color: beige;
+        background-color: #2D9596;
+        margin: 0;
+    }
+    #content {
+        display: grid;
+        grid-template-columns: 0.5fr 2fr;
+    }
+    #content div {
+        border: 2px solid black;
+        height: 100vh;
+    }
+    #makepost {
+        padding: 20px;
+    }
+    #makepost a {
+        border-radius: 20px;
+        padding: 10px;
+        border: 2px solid #265073;
+        color: rgb(16, 54, 93);
+        text-decoration: none;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    #makepost a:hover{
+        
+        color: beige;
+        text-decoration: none;
+        background-color: #265073;
+    }
+    
+    input,textarea
+    {
+        width: 100%;
+        background-color: #72c5c6;
+        color: #265073;
+        border: none;
+    }
+    input:hover,textarea:hover
+    {
+        background-color: #265073;
+        transition: all 0.5s;
+        color: beige;
+    }
+    label
+    {
+        font-family: Arial, Helvetica, sans-serif;
+        color: #265073;
+    }
+    button{
+        border-radius: 20px;
+        background-color: #265073;
+        color: white;
+        margin-top: 20px;
+    }
+    button:hover
+    {
+        opacity: 40%;
+        color: black;
+    }
+</style>
+<body>
+    <%- include("partials/header.ejs") %>
+<h1>Edit Post</h1>
+<form action="/edit/<%= post.title %>" method="POST">
+    <div>
+        <label for="title">Title:</label><br>
+        <input type="text" id="title" name="title" value="<%= post.title %>">
+    </div>
+    <div>
+        <label for="content">Content:</label><br>
+        <textarea id="content" name="content" rows="4" cols="50"><%= post.content %></textarea>
+    </div>
+    <button type="submit">Save Changes</button>
+
+</form>
+<%-include("partials/footer.ejs")%>

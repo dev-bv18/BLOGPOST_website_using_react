@@ -1,0 +1,41 @@
+<STYLe>
+    #blogs
+    {
+        background-color:#9AD0C2;
+    }
+    h2{
+font-family: Arial, Helvetica, sans-serif;
+color: #265073;
+    }
+    ul
+    {
+        padding:0px 40px 0px 40px;
+        margin: 20px;
+        list-style-type: circle;
+        
+    }
+    ul li a
+    {
+        text-decoration: none;
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        color: #265073;
+    }
+    ul li a:hover{
+        color: #9AD0C2;
+        transition: all 0.5s;
+        text-shadow: 2px 3px 5px rgb(0, 0, 0);
+    }
+</STYLe>
+<div id="blogs">
+    <h2>Blogs</h2>
+    <ul>
+        <% for(var i = 0; i < blogPosts.length; i++) { %>
+            <li id="listitem<%= i %>">
+                <a href="/blog/<%= i %>"><%= blogPosts[i].title %></a>
+            </li>
+        <% } %>
+    </ul>
+    
+    
+</div>

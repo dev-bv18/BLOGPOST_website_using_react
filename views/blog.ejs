@@ -1,0 +1,46 @@
+<style>
+    p
+    {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 20px;
+    }
+    p
+  {
+    
+    color: #084368;
+  }
+  body{
+    background-color: beige;
+  }
+ 
+  a
+  {
+   color: red;
+   text-decoration: none;
+   font-family: Arial, Helvetica, sans-serif;
+   border: 2px solid red ;
+   border-radius: 20px;
+   padding:10px;
+  }
+  #edit
+  {
+    color: green;
+    border: 2px solid green;
+  }
+      h1
+      {text-align: center;
+      color: beige;
+      background-color: #2D9596;
+      margin: 0;}
+  </style>
+  <%- include('partials/header.ejs') %>
+    <h1><%= post.title %></h1>
+    <p><%= post.content %></p>
+    
+    <!-- Edit and Delete links for the current post -->
+    <a href="/delete/<%= post.title %>">Delete this post</a>
+    <a href="/edit/<%= post.title%>" id="edit">Edit this post</a>
+    <%-include("partials/footer.ejs")%>
+  
+  
